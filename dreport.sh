@@ -62,7 +62,7 @@ generate_report() {
     echo "1."    
     sleep 0.6   
 
-    emacs "$REPORT_FILE"
+    nano "$REPORT_FILE"
 
     echo "Report saved at: $REPORT_FILE"
 }
