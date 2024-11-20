@@ -3,7 +3,6 @@
 
 #Vars
 PROJECT_DIR="/mnt/c/Users/saste/Workspace/MobileApps"
-REPORT_DIR="$PROJECT_DIR/reports"
 CURRENT_DATE=$(date '+%Y-%m-%d')
 
 #check if the daily report exists first
