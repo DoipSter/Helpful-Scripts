@@ -44,3 +44,10 @@ add_problem(){
         fi
     done
 }
+
+# Make sure the reports directory exists
+mkdir -p "$REPORT_DIR"
+
+#MAIN
+
+add_problem
