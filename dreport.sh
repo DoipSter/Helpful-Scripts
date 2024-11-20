@@ -23,3 +23,11 @@ select_project() {
         exit 1
     fi
 }
+
+# Generate the daily report
+
+generate_report() {
+    REPORT_DIR="$PROJECT/reports"
+    REPORT_FILE="$REPORT_DIR/daily_report_$(date '+%y-%m-%d').txt"
+    
+}
