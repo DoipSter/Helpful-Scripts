@@ -31,4 +31,16 @@ add_problem(){
         check_file
 
         echo "What's the problem in '$FILE'?"
+        read -r PROBLEM
+
+        #APPENDS the problem to the bugs section in your daily report
+        sed -i "/Bugs:/a - $PROBLEM (File: $FILE)" "$REPORT_FILE"
+
+        echo "Do you have more problems to add? (y/n)"
+        read -r RESPONSE
+        if [[ "$RESPONSE" != "y" && "$RESPONSE" !="Y" ]]; then
+            echo "All prolems added to $REPORT_FILE."
+            break
+        fi
+    done
 }
