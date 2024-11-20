@@ -6,10 +6,30 @@ PROJECT_DIR="/mnt/c/Users/saste/Workspace/MobileApps"
 CURRENT_DATE=$(date '+%Y-%m-%d')
 
 #check if the daily report exists first
-check_project(){
+check_project() {
+    if [ ! -d "$REPORT_DIR" ]; then
+        echo "Reports directory not found in $PROJECT. Creating one..."
+        mkdir -p "$REPORT_DIR"
+    fi
+
     if [ ! -f "$REPORT_FILE" ]; then
-        echo "Error: No daily report found for today. Please create one first."
-        exit 1
+        echo "Daily report not found. Creating one for today..."
+        cat > "$REPORT_FILE" <<EOF
+Daily Report
+============
+Name       : $(whoami)
+Date       : $(date)
+Project    : $PROJECT
+
+Bugs:
+------
+
+Fixes:
+-------
+
+Additional Comments:
+---------------------
+EOF
     fi
 }
 
