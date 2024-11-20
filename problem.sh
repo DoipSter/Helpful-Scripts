@@ -22,3 +22,11 @@ select_file() {
         exit 1
     fi
 }
+
+add_problem(){
+    while true; do
+        select_file
+        
+
+        echo "What's the problem in '$FILE'?"
+}
