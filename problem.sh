@@ -20,6 +20,7 @@ select_project() {
         echo "No directory selected. Exiting."
         exit 1
     fi
+    REPORT_DIR="$PROJECT/reports"
     REPORT_FILE="$PROJECT/reports/daily_report_$CURRENT_DATE.txt"
 }
 
