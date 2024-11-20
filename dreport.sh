@@ -66,3 +66,8 @@ generate_report() {
 
     echo "Report saved at: $REPORT_FILE"
 }
+
+# Main Script
+get_username
+select_project
+generate_report
