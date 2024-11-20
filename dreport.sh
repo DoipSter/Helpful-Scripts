@@ -29,5 +29,37 @@ select_project() {
 generate_report() {
     REPORT_DIR="$PROJECT/reports"
     REPORT_FILE="$REPORT_DIR/daily_report_$(date '+%y-%m-%d').txt"
-    
+
+    # check if report directory exists
+
+    mkdir -p "$REPORT_DIR"
+
+    #Basic outline of report to be output in the file
+    {
+        echo "Daily Report"
+        echo "============"
+        echo "Name       : $USER_NAME"
+        echo "Date       : $(date)"
+        echo "Project    : $PROJECT"
+        echo ""
+        echo "Bugs:"
+        echo "------"
+        echo ""
+        echo "Fixes:"
+        echo "------"
+        echo ""
+        echo "Additional Comments:"
+    } > "$REPORT_FILE"
+
+    echo "Report is opening in..."
+    echo "3..."
+    sleep(.6)
+    echo "2.."
+    sleep(.6)
+    echo "1."    
+    sleep(.6)    
+
+    emacs "$REPORT_FILE"
+
+    echo "Report saved at: $REPORT_FILE"
 }
