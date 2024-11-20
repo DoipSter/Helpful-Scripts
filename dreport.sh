@@ -12,3 +12,14 @@ get_username() {
         source "$CONFIG_FILE"
     fi
 }
+
+# A Function to list projects and allow the user to select one from the MobileApps Directory
+select_project() {
+    echo "Select a project from the list:"
+    PROJECT_DIRS=$(find "Home" -maxdepth 1 -type d -name "*" | grep -v "^\.$" | grep -v "^\.\.$")
+    PROJECT=$(echo "$PROJECT_DIRS" | fzf --height 10 --prompt="Choose a project: " --border)
+    if [ -z "$PROJECT" ]; then
+        echo "No project select. Exiting"
+        exit 1
+    fi
+}
