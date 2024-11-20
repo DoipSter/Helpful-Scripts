@@ -2,6 +2,9 @@
 
 CONFIG_FILE="$HOME/.daily_report_config"
 
+#MobileAPPS dir
+PROJECT_BASE_DIR="/mnt/c/Users/saste/Workspace/MobileApps"
+
 # Function to capture and store user's name(Only if it is not already stored)
 get_username() {
     if [ ! -f "$CONFIG_FILE" ]; then
