@@ -4,7 +4,7 @@
 #Vars
 PROJECT_DIR="/mnt/c/Users/saste/Workspace/MobileApps"
 REPORT_DIR="$PROJECT_DIR/reports"
-REPORT_FILE="$REPORT_DIR/daily_report_$(date '+%y-%m-d').txt"
+CURRENT_DATE=$(date '+%Y-%m-%d')
 
 #check if the daily report exists first
 check_file(){
@@ -14,23 +14,20 @@ check_file(){
     fi
 }
 
-# A function to select a file
-select_file() {
-    echo "Select the file where the problem occurs:"
-    FILE=$(find "$PROJECT_DIR" -type f | fzf --height 10 --prompt="Choose a file: " --border)
-    if [ -z "$FILE" ]; then
-        echo "No file selected. Exiting."
+select_project() {
+    echo "Select the project directory where the problem occurred:"
+    PROJECT=$(find "$PROJECT_DIR" -mindepth 1 -maxdepth 1 -type d | fzf --height 10 --prompt="Choose a directory: " --border)
+    if [ -z "$PROJECT" ]; then
+        echo "No directory selected. Exiting."
         exit 1
     fi
+    REPORT_FILE="$PROJECT/reports/daily_report_$CURRENT_DATE.txt"
 }
 
 add_problem(){
     while true; do
 
-        select_file
-        check_file
-
-        echo "What's the problem in '$FILE'?"
+        echo "What's the problem?"
         read -r PROBLEM
 
         #APPENDS the problem to the bugs section in your daily report
