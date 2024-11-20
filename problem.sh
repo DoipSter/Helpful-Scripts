@@ -38,7 +38,7 @@ add_problem(){
 
         echo "Do you have more problems to add? (y/n)"
         read -r RESPONSE
-        if [[ "$RESPONSE" != "y" && "$RESPONSE" !="Y" ]]; then
+        if [[ "$RESPONSE" != "y" && "$RESPONSE" != "Y" ]]; then
             echo "All prolems added to $REPORT_FILE."
             break
         fi
