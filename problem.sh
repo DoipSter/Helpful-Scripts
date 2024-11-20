@@ -7,7 +7,7 @@ REPORT_DIR="$PROJECT_DIR/reports"
 CURRENT_DATE=$(date '+%Y-%m-%d')
 
 #check if the daily report exists first
-check_file(){
+check_project(){
     if [ ! -f "$REPORT_FILE" ]; then
         echo "Error: No daily report found for today. Please create one first."
         exit 1
@@ -46,5 +46,6 @@ add_problem(){
 mkdir -p "$REPORT_DIR"
 
 #MAIN
-
+select_project
+check_project
 add_problem
