@@ -16,7 +16,7 @@ check_project(){
 
 select_project() {
     echo "Select the project directory where the problem occurred:"
-    PROJECT=$(find "$PROJECT_DIR" -mindepth 1 -maxdepth 1 -type d | fzf --height 10 --prompt="Choose a directory: " --border)
+    PROJECT=$(find "$PROJECT_DIR" -mindepth 1 -maxdepth 1 -type d ! -name ".git"| fzf --height 10 --prompt="Choose a directory: " --border)
     if [ -z "$PROJECT" ]; then
         echo "No directory selected. Exiting."
         exit 1
