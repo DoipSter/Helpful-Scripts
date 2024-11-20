@@ -7,11 +7,12 @@ REPORT_DIR="$PROJECT_DIR/reports"
 REPORT_FILE="$REPORT_DIR/daily_report_$(date '+%y-%m-d').txt"
 
 #check if the daily report exists first
-if [ ! -f "$REPORT_FILE" ]; then
-    echo "Error: No daily report found for today. Please create one first."
-    exit 1
-fi
-
+check_file(){
+    if [ ! -f "$REPORT_FILE" ]; then
+        echo "Error: No daily report found for today. Please create one first."
+        exit 1
+    fi
+}
 
 # A function to select a file
 select_file() {
@@ -25,8 +26,9 @@ select_file() {
 
 add_problem(){
     while true; do
+
         select_file
-        
+        check_file
 
         echo "What's the problem in '$FILE'?"
 }
