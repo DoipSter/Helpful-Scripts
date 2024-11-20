@@ -62,9 +62,6 @@ add_problem(){
     done
 }
 
-# Make sure the reports directory exists
-mkdir -p "$REPORT_DIR"
-
 #MAIN
 select_project
 check_project
