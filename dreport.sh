@@ -56,11 +56,11 @@ generate_report() {
 
     echo "Report is opening in..."
     echo "3..."
-    sleep(1)
+    sleep 0.6
     echo "2.."
-    sleep(1)
+    sleep 0.6
     echo "1."    
-    sleep(1)    
+    sleep 0.6   
 
     emacs "$REPORT_FILE"
 
