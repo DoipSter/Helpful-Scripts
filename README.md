@@ -1,5 +1,5 @@
 # Helpful Reporting Scripts
-# To be used to for shortcuts when developing
+# To be used for shortcuts when developing Mobile Applications
 
 Script Name: dreport.sh
 Description: This script is used to make a daily report for the ABC-Youth Foundation Workout application.
