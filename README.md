@@ -22,6 +22,8 @@ list_comments.csv
 full_report.sh (combines list_bugs.txt, list_bugs_fixed.txt, list_suggestions.txt, and list_comments.txt to make one report the name file, but respective categories)
 full_report.csv (Add a recently edited/Recent reported date, name)
 
+...
+
 
 
 
