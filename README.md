@@ -11,16 +11,16 @@ FUTURE SCRIPTS
 ==============
 add_bugs.sh (collects all bugs from the project reports, and add the ability to delete from this list and add to list_bugs_fixed.txt)
 list_bugs.txt
-list_bugs_fixed.txt (list of every bug from daily reports)
+list_bugs_fixed.csv (list of every bug from daily reports)
 
 add_suggestion.sh (add the ability to remove suggestions and add suggestions )
-list_suggestions.txt
+list_suggestions.csv
 
 add_comment.sh (comments, add the ability to remove suggestions and add suggestions)
-list_comments.txt
+list_comments.csv
 
 full_report.sh (combines list_bugs.txt, list_bugs_fixed.txt, list_suggestions.txt, and list_comments.txt to make one report the name file, but respective categories)
-full_report.txt (Add a recently edited/Recent reported date, name)
+full_report.csv (Add a recently edited/Recent reported date, name)
 
 
 
