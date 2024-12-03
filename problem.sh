@@ -3,7 +3,7 @@
 
 #Vars
 PROJECT_DIR="/mnt/c/Users/saste/Workspace/MobileApps"
-CURRENT_DATE=$(date '+%Y-%m-%d')
+CURRENT_DATE=$(date '+%y-%m-%d')
 
 #check if the daily report exists first
 check_project() {
